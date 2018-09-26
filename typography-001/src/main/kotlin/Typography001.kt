@@ -2,6 +2,7 @@ import org.openrndr.Program
 import org.openrndr.application
 import org.openrndr.color.ColorRGBa
 import org.openrndr.configuration
+import org.openrndr.draw.ColorBuffer
 import org.openrndr.draw.FontImageMap
 import org.openrndr.extensions.Screenshots
 import org.openrndr.filter.blend.add
@@ -11,19 +12,21 @@ import org.openrndr.filter.blur.GaussianBlur
 class Typography001: Program() {
 
     var drawFunc = {}
+    lateinit var image: ColorBuffer;
     override fun setup() {
 
 
         val gaussianBlur = GaussianBlur()
-
+        image = ColorBuffer.fromUrl("file:data/Schermafbeelding 2018-09-25 om 13.20.10.jpg");
         drawFunc = {
             poster(drawer) {
                 drawer.rectangle(10.0, 10.0, 120.0, 140.0)
+                drawer.image(image)
                 drawer.rectangle(30.0, 30.0, 150.0, 170.0)
                 drawer.rectangle(60.0, 60.0, 180.0, 200.0)
                 drawer.rectangle(90.0, 90.0, 210.0, 230.0)
                 drawer.rectangle(95.0, 95.0, 215.0, 235.0)
-                drawer.fill = ColorRGBa.BLUE
+                drawer.fill = ColorRGBa.BLACK
                 drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 22.0, 2.0)
                 drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 0.0)
                 drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 20.0)
@@ -103,6 +106,8 @@ class Typography001: Program() {
                     drawer.text("Maarja,", 100.0, 400.0)
                 }
             }
+
+
 
 
         }
