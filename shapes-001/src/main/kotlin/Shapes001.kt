@@ -71,6 +71,7 @@ class Shapes001 : Program() {
                     drawer.stroke = null
                     drawer.circles(circles)
                     drawer.circles(circles)
+                    drawer.circles(circles)
 
                 }
 
