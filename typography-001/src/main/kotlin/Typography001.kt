@@ -17,7 +17,10 @@ class Typography001: Program() {
 
         drawFunc = {
             poster(drawer) {
-
+                drawer.rectangle(10.0, 10.0, 120.0, 140.0)
+                drawer.rectangle(30.0, 30.0, 150.0, 170.0)
+                drawer.rectangle(60.0, 60.0, 180.0, 200.0)
+                drawer.rectangle(90.0, 90.0, 210.0, 230.0)
                 drawer.fill = ColorRGBa.BLUE
                 drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 22.0, 2.0)
                 drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 0.0)
