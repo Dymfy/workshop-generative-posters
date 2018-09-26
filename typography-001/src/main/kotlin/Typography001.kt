@@ -80,6 +80,15 @@ class Typography001: Program() {
                 }, blend = add) {
                     drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 740.0, 2.0)
                     drawer.text("))", 85.0, 410.0)
+                    drawer.fill = ColorRGBa.YELLOW
+                    drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 300.0, 2.0)
+                    drawer.text("--", 0.0, 0.0)
+                    drawer.text("-", 320.0, 400.0)
+                    drawer.text("--", 400.0, 510.0)
+                    drawer.text("--", 410.0, 100.0)
+                    drawer.text("-", 320.0, 200.0)
+
+
                 }
             }
 
