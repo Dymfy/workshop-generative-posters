@@ -1,5 +1,6 @@
 import org.openrndr.Program
 import org.openrndr.application
+import org.openrndr.color.ColorRGBa
 import org.openrndr.configuration
 import org.openrndr.draw.FontImageMap
 import org.openrndr.extensions.Screenshots
@@ -13,19 +14,68 @@ class Typography001: Program() {
 
         val gaussianBlur = GaussianBlur()
 
+
         drawFunc = {
             poster(drawer) {
-                drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 32.0, 2.0)
-                drawer.text("My name is", 20.0, 200.0)
-
+                drawer.background(ColorRGBa.BLACK)
+                drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 60.0, 9.0)
                 layer(post = gaussianBlur.apply {
-                    gain = 1.0
+                    gain = 5.0
                     spread = 1.0
                     window = 25
-                    sigma = Math.cos(seconds)*5.0 + 5.0
+                    sigma = Math.cos(seconds)*10.0 + 10.0
+
+//B in %
                 }, blend = add) {
-                    drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 64.0, 2.0)
-                    drawer.text("Tim Blurton", 20.0, 250.0)
+                    drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 60.0, 2.0)
+                    drawer.text("%%", 100.0, 100.0)
+                    drawer.text("%%", 100.0, 150.0)
+                    drawer.text("%%", 100.0, 200.0)
+                    drawer.text("%%", 100.0, 250.0)
+                    drawer.text("%%", 100.0, 300.0)
+                    drawer.text("%%", 150.0, 100.0)
+                    drawer.text("%", 200.0, 100.0)
+                    drawer.text("%%", 200.0, 150.0)
+                    drawer.text("%%", 200.0, 250.0)
+                    drawer.text("%", 200.0, 300.0)
+                    drawer.text("%%%", 150.0, 200.0)
+                    drawer.text("%%", 150.0, 300.0)
+// A in %
+                    drawer.text("%%%%", 300.0, 50.0)
+                    drawer.text("%%", 300.0, 100.0)
+                    drawer.text("%%%%", 300.0, 150.0)
+                    drawer.text("%%", 300.0, 200.0)
+                    drawer.text("%%", 300.0, 250.0)
+                    drawer.text("%%", 400.0, 50.0)
+                    drawer.text("%%", 400.0, 100.0)
+                    drawer.text("%%", 400.0, 150.0)
+                    drawer.text("%%", 400.0, 200.0)
+                    drawer.text("%%", 400.0, 250.0)
+
+                    // letter N
+                    drawer.text("%%%%", 300.0, 350.0)
+                    drawer.text("%%", 300.0, 400.0)
+                    drawer.text("%%", 300.0, 450.0)
+                    drawer.text("%%", 300.0, 500.0)
+                    drawer.text("%%", 300.0, 550.0)
+                    drawer.text("%%", 400.0, 350.0)
+                    drawer.text("%%", 400.0, 400.0)
+                    drawer.text("%%", 400.0, 450.0)
+                    drawer.text("%%", 400.0, 500.0)
+                    drawer.text("%%", 400.0, 550.0)
+
+
+
+
+
+                    //drawer.text("%%", 150.0, 100.0)
+                    //drawer.text("%", 200.0, 100.0)
+                    //drawer.text("%%", 200.0, 150.0)
+                    // drawer.text("%%", 200.0, 250.0)
+                    // drawer.text("%", 200.0, 300.0)
+                    // drawer.text("%%%", 150.0, 200.0)
+                    // drawer.text("%%", 150.0, 300.0)
+
                 }
             }
         }
@@ -42,6 +92,9 @@ class Typography001: Program() {
 
 // -- entry point of the application
 fun main(args: Array<String>) {
-    application(Typography001(), configuration {  })
+    application(Typography001(), configuration {
+        height = 680
+        width = 500
 
+    })
 }
