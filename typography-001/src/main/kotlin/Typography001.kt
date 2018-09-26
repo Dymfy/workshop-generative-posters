@@ -13,6 +13,7 @@ class Typography001: Program() {
     var drawFunc = {}
     override fun setup() {
 
+
         val gaussianBlur = GaussianBlur()
 
         drawFunc = {
@@ -70,8 +71,6 @@ class Typography001: Program() {
 
 
 
-
-
                 layer(post = gaussianBlur.apply {
                     gain = 8.0
                     spread = 7.0
@@ -89,6 +88,19 @@ class Typography001: Program() {
                     drawer.text("-", 320.0, 200.0)
 
 
+
+                }
+
+                layer(post = gaussianBlur.apply {
+                    gain = 9.0
+                    spread = 3.0
+                    window = 25
+                    sigma = Math.cos(seconds)*20.0 + 20.0
+                }, blend = add) {
+
+                    drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 40.0, 2.0)
+                    drawer.fill = ColorRGBa.PINK
+                    drawer.text("Maarja,", 100.0, 400.0)
                 }
             }
 
