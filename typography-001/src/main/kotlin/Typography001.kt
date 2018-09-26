@@ -21,6 +21,7 @@ class Typography001: Program() {
                 drawer.rectangle(30.0, 30.0, 150.0, 170.0)
                 drawer.rectangle(60.0, 60.0, 180.0, 200.0)
                 drawer.rectangle(90.0, 90.0, 210.0, 230.0)
+                drawer.rectangle(95.0, 95.0, 215.0, 235.0)
                 drawer.fill = ColorRGBa.BLUE
                 drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 22.0, 2.0)
                 drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 0.0)
