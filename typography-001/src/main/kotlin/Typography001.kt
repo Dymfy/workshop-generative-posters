@@ -18,6 +18,7 @@ class Typography001: Program() {
 
         val gaussianBlur = GaussianBlur()
         image = ColorBuffer.fromUrl("file:data/Schermafbeelding 2018-09-25 om 13.20.10.jpg");
+        image = ColorBuffer.fromUrl("file:data/datum.png");
         drawFunc = {
             poster(drawer) {
                 drawer.rectangle(10.0, 10.0, 120.0, 140.0)
@@ -124,6 +125,9 @@ class Typography001: Program() {
 
 // -- entry point of the application
 fun main(args: Array<String>) {
-    application(Typography001(), configuration {  })
+    application(Typography001(), configuration {
+        height = 950
+        width = 630
 
+    })
 }
