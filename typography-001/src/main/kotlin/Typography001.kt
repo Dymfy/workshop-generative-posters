@@ -17,6 +17,8 @@ class Typography001: Program() {
 
         drawFunc = {
             poster(drawer) {
+
+                drawer.fill = ColorRGBa.PINK
                 drawer.background(ColorRGBa.BLUE)
                 drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 22.0, 2.0)
                 drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 0.0)
