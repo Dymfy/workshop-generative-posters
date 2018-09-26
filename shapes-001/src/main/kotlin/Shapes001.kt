@@ -70,6 +70,7 @@ class Shapes001 : Program() {
                     drawer.fill = layer3Color
                     drawer.stroke = null
                     drawer.circles(circles)
+                    drawer.circles(circles)
                 }
 
 
