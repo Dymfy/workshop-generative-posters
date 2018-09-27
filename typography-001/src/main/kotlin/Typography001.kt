@@ -33,11 +33,11 @@ class Typography001: Program() {
             poster(drawer) {
                 drawer.rectangle(10.0, 10.0, 120.0, 140.0)
                 drawer.image(image2, image2.bounds, Rectangle(-30.0, 40.0, image2.bounds.width*5.0, image2.bounds.height*5.0))
-                drawer.rectangle(30.0, 30.0, 150.0, 170.0)
-                drawer.rectangle(60.0, 60.0, 180.0, 200.0)
-                drawer.rectangle(90.0, 90.0, 210.0, 230.0)
-                drawer.rectangle(95.0, 95.0, 215.0, 235.0)
-                drawer.fill = ColorRGBa.RED
+                drawer.rectangle(200.0, 30.0, 50.0, 170.0)
+                drawer.rectangle(80.0, 70.0, 50.0, 600.0)
+                drawer.rectangle(600.0, 90.0, 50.0, 230.0)
+                drawer.rectangle(95.0, 110.0, 50.0, 235.0)
+                drawer.fill = ColorRGBa.BLUE
                 drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 22.0, 2.0)
                 var xpos = 0.0;
                 for( i in 0..3 ){
@@ -53,9 +53,9 @@ class Typography001: Program() {
 //                drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 120.0)
 //                drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 140.0)
 //                drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 160.0)
-//                drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 180.0)
-//                drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 200.0)
-//                drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 220.0)
+//                drawer.text("((((((((((((((((((((((((((((00000000((((((((((((((((((((((((((", 0.0, 180.0)
+//                drawer.text("(((((((((((((((((((((((((((000000000((((((((((((((((((((((((((", 0.0, 200.0)
+//                drawer.text("((((((((((((((((((000000000000000000((((((((((((((((((((((((((", 0.0, 220.0)
 //                drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 240.0)
 //                drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 260.0)
 //                drawer.text("((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((", 0.0, 280.0)
@@ -102,7 +102,7 @@ class Typography001: Program() {
                 }, blend = add) {
                     drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 740.0, 2.0)
                     drawer.text(" )", 85.0, 410.0)
-                    drawer.fill = ColorRGBa.YELLOW
+                    drawer.fill = ColorRGBa.PINK
                     drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 300.0, 2.0)
                     drawer.text("--", 0.0, 0.0)
                     drawer.text("-", 320.0, 400.0)
@@ -118,11 +118,11 @@ class Typography001: Program() {
                     gain = 9.0
                     spread = 3.0
                     window = 25
-                    sigma = Math.cos(seconds)*20.0 + 20.0
+                    sigma = Math.cos(seconds)*10.0 + 1800.0
                 }, blend = add) {
 
                     drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 40.0, 2.0)
-                    drawer.fill = ColorRGBa.PINK
+                    drawer.fill = ColorRGBa.GREEN
                     drawer.text("GIFJES WERKEN NIET,", 100.0, 400.0)
                 }
             }
@@ -142,8 +142,8 @@ class Typography001: Program() {
 
     override fun draw() {
         drawFunc()
-        drawer.fill = ColorRGBa.YELLOW
-        drawer.circle(mouse.position, 10.0)
+        drawer.fill = ColorRGBa.BLUE
+        drawer.circle(mouse.position, 200.0)
 
 
     }
