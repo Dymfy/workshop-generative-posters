@@ -5,24 +5,32 @@ import org.openrndr.configuration
 import org.openrndr.draw.ColorBuffer
 import org.openrndr.draw.FontImageMap
 import org.openrndr.extensions.Screenshots
+import org.openrndr.ffmpeg.ScreenRecorder
 import org.openrndr.filter.blend.add
 import org.openrndr.filter.blur.GaussianBlur
+import org.openrndr.shape.Rectangle
 
 
 class Typography001: Program() {
 
     var drawFunc = {}
-    lateinit var image: ColorBuffer;
+
+    lateinit var image2: ColorBuffer;
+    lateinit var image3: ColorBuffer;
     override fun setup() {
 
+        // extend(ScreenRecorder())
 
         val gaussianBlur = GaussianBlur()
-        image = ColorBuffer.fromUrl("file:data/Schermafbeelding 2018-09-25 om 13.20.10.jpg");
-        image = ColorBuffer.fromUrl("file:data/datum.png");
+
+        image2 = ColorBuffer.fromUrl("file:data/datum.png");
+        image3 = ColorBuffer.fromUrl("file:data/code zwarte strepen.png");
         drawFunc = {
             poster(drawer) {
                 drawer.rectangle(10.0, 10.0, 120.0, 140.0)
-                drawer.image(image)
+
+                drawer.image(image2, image2.bounds, Rectangle(-30.0, 0.0, image2.bounds.width*1.0, image2.bounds.height*1.0))
+                drawer.image(image3, image2.bounds, Rectangle(0.0, 0.0, image3.bounds.width*0.5, image3.bounds.height*0.5))
                 drawer.rectangle(30.0, 30.0, 150.0, 170.0)
                 drawer.rectangle(60.0, 60.0, 180.0, 200.0)
                 drawer.rectangle(90.0, 90.0, 210.0, 230.0)
@@ -132,7 +140,7 @@ class Typography001: Program() {
 fun main(args: Array<String>) {
     application(Typography001(), configuration {
         height = 950
-        width = 630
+        width = 600
 
     })
 }
