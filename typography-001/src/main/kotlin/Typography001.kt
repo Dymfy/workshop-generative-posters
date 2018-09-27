@@ -25,19 +25,19 @@ class Typography001: Program() {
 
         val gaussianBlur = GaussianBlur()
 
-        image2 = ColorBuffer.fromUrl("file:data/datum.png");
+        image2 = ColorBuffer.fromUrl("file:data/giphy1.gif");
+
 
 
         drawFunc = {
             poster(drawer) {
                 drawer.rectangle(10.0, 10.0, 120.0, 140.0)
-
-                drawer.image(image2, image2.bounds, Rectangle(-30.0, 0.0, image2.bounds.width*1.0, image2.bounds.height*1.0))
+                drawer.image(image2, image2.bounds, Rectangle(-30.0, 40.0, image2.bounds.width*5.0, image2.bounds.height*5.0))
                 drawer.rectangle(30.0, 30.0, 150.0, 170.0)
                 drawer.rectangle(60.0, 60.0, 180.0, 200.0)
                 drawer.rectangle(90.0, 90.0, 210.0, 230.0)
                 drawer.rectangle(95.0, 95.0, 215.0, 235.0)
-                drawer.fill = ColorRGBa.BLACK
+                drawer.fill = ColorRGBa.RED
                 drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 22.0, 2.0)
                 var xpos = 0.0;
                 for( i in 0..3 ){
@@ -123,7 +123,7 @@ class Typography001: Program() {
 
                     drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/IBMPlexMono-Bold.ttf", 40.0, 2.0)
                     drawer.fill = ColorRGBa.PINK
-                    drawer.text("Maarja,", 100.0, 400.0)
+                    drawer.text("GIFJES WERKEN NIET,", 100.0, 400.0)
                 }
             }
 
