@@ -9,6 +9,9 @@ import org.openrndr.ffmpeg.ScreenRecorder
 import org.openrndr.filter.blend.add
 import org.openrndr.filter.blur.GaussianBlur
 import org.openrndr.shape.Rectangle
+import org.openrndr.Application
+import org.openrndr.Configuration
+
 
 
 class Typography001: Program() {
@@ -16,7 +19,6 @@ class Typography001: Program() {
     var drawFunc = {}
 
     lateinit var image2: ColorBuffer;
-    lateinit var image3: ColorBuffer;
     override fun setup() {
 
         // extend(ScreenRecorder())
@@ -24,13 +26,13 @@ class Typography001: Program() {
         val gaussianBlur = GaussianBlur()
 
         image2 = ColorBuffer.fromUrl("file:data/datum.png");
-        image3 = ColorBuffer.fromUrl("file:data/code zwarte strepen.png");
+
+
         drawFunc = {
             poster(drawer) {
                 drawer.rectangle(10.0, 10.0, 120.0, 140.0)
 
                 drawer.image(image2, image2.bounds, Rectangle(-30.0, 0.0, image2.bounds.width*1.0, image2.bounds.height*1.0))
-                drawer.image(image3, image2.bounds, Rectangle(0.0, 0.0, image3.bounds.width*0.5, image3.bounds.height*0.5))
                 drawer.rectangle(30.0, 30.0, 150.0, 170.0)
                 drawer.rectangle(60.0, 60.0, 180.0, 200.0)
                 drawer.rectangle(90.0, 90.0, 210.0, 230.0)
@@ -88,6 +90,10 @@ class Typography001: Program() {
 
 
 
+
+
+
+
                 layer(post = gaussianBlur.apply {
                     gain = 8.0
                     spread = 7.0
@@ -130,9 +136,21 @@ class Typography001: Program() {
         extend(Screenshots())
     }
 
+
+
+
+
     override fun draw() {
         drawFunc()
+        drawer.fill = ColorRGBa.YELLOW
+        drawer.circle(mouse.position, 10.0)
+
+
     }
+
+//    override fun draw() {
+//        drawFunc()
+//    }
 
 }
 
